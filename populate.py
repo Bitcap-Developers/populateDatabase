@@ -14,7 +14,7 @@ sys.setdefaultencoding("utf-8")
 
 
 
-def populateDatabase():
+def populate_database():
     url = 'https://gist.githubusercontent.com/mayurah/1302855181e4b5e3b05211d242ae592a/raw/7034304a7efdac74011790227ca6c8aa7ca994b1/countriesToCities.json'
     response = urlopen(url)
     json_countries = json.load(response)
