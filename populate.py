@@ -1,8 +1,16 @@
 # !/usr/bin/env python
 # -*- coding: utf-8 -*- 
+"""
+Documentation for this module:
+This module is used to populate the database with the name of the countries in the country table and state, countries(foreign Key), timezone and language in the state table.
+The data is populated for the places where DHL provides services.
+"""
+# importing the required module
 import json , requests , pycountry , pycountry
 from urllib2 import urlopen
 from timezonefinder import TimezoneFinder
+
+# Array of countries along with there languages imported 
 import countryLanguage.py
 
 from messengerbot.models import user , statusCode , status , typeOfService , modeOfContact , typeOfShipment , typeOfCollection , typeOfBox , address , language , country , place , order
@@ -15,6 +23,7 @@ sys.setdefaultencoding("utf-8")
 
 
 def populate_database():
+#     json of the places where DHL provides services.
     url = 'https://gist.githubusercontent.com/mayurah/1302855181e4b5e3b05211d242ae592a/raw/7034304a7efdac74011790227ca6c8aa7ca994b1/countriesToCities.json'
     response = urlopen(url)
     json_countries = json.load(response)
